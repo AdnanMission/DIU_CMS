@@ -15,6 +15,59 @@ class complaintcontroller extends Controller
     
         return view('complaint');
     }
+    public function index000()
+    {
+    
+        return view('complaint2');
+    }
+
+
+    public function academic()
+    {
+    
+        return view('academic');
+    }
+    public function lab()
+    {
+    
+        return view('lab');
+    }
+   
+    public function library()
+    {
+    
+        return view('library');
+    }
+   
+   public function transport()
+    {
+    
+        return view('transport');
+    }
+   
+   public function canteen()
+    {
+    
+        return view('canteen');
+    }
+   
+   public function account()
+    {
+    
+        return view('account');
+    }
+   
+   public function hostel()
+    {
+    
+        return view('hostel');
+    }
+   
+   
+
+
+
+
     //insert into data table
     public function insert(Request $request)
     {
@@ -22,12 +75,12 @@ class complaintcontroller extends Controller
         $complaint->name = $request->name;
         $complaint->student_id = $request->student_id;
         $complaint->categories = $request->categories;
-        $complaint->types = $request->types;
         $complaint->complaint_date = $request->complaint_date;
         $complaint->department = $request->department;
         $complaint->campus = $request->campus;
         $complaint->description_of_complaint = $request->description_of_complaint;
         $complaint->uplode_file = $request->uplode_file;
+        $complaint->action = $request->Action;
         $complaint->save();
 
         return redirect()->route('show');
@@ -44,7 +97,6 @@ class complaintcontroller extends Controller
         $complaint_tbl->name = $request->name;
         $complaint_tbl->student_id = $request->student_id;
         $complaint_tbl->categories = $request->categories;
-        $complaint_tbl->types = $request->types;
         $complaint_tbl->complaint_date = $request->complaint_date;
         $complaint_tbl->department = $request->department;
         $complaint_tbl->campus = $request->campus;
@@ -72,6 +124,16 @@ class complaintcontroller extends Controller
         
     }
     
+
+    //Complaint details view
+    public function viw()
+    {
+        $complaint_tbl= complaint_tbl::all();
+        return view('viewcomplient')->with('complaint_tbl', $complaint_tbl);
+        
+    }
+    
+
     //edit the value from table or form
     public function edit($id)
     {
@@ -87,7 +149,7 @@ class complaintcontroller extends Controller
     }
 
      //update the vlaue or send email
-    public function submit(Request $request)
+    /*public function submit(Request $request)
     {
        
         $this-> validate($request,[
@@ -118,12 +180,37 @@ class complaintcontroller extends Controller
         //return Redirect::to('/submit');
         //return redirect()->route('submit');
          return view('transmit');
-    }
+    }*/
 //show for admin page
     public function show00()
     {
         $complaint_tbl= complaint_tbl::all();
         return view('adminnewcomplaint')->with('complaint_tbl', $complaint_tbl);
+        
+    }
+    public function show01()
+    {
+        $complaint_tbl= complaint_tbl::all();
+        return view('pnewcomplaint')->with('complaint_tbl', $complaint_tbl);
+        
+    }
+    public function show02()
+    {
+        $complaint_tbl= complaint_tbl::all();
+        return view('cnewcomplaint')->with('complaint_tbl', $complaint_tbl);
+        
+    }
+    public function show03()
+    {
+        $complaint_tbl= complaint_tbl::all();
+        return view('dnewcomplaint')->with('complaint_tbl', $complaint_tbl);
+        
+    }
+
+     public function statuscomplaint()
+    {
+        $complaint_tbl= complaint_tbl::all();
+        return view('statuscomplaint')->with('complaint_tbl', $complaint_tbl);
         
     }
     
@@ -159,5 +246,31 @@ class complaintcontroller extends Controller
         return view('adminnewcomplaint')->with('complaint_tbl', $complaint_tbl);
         
     }
+
+    
+
+
+    public function ins(Request $request)
+    {
+        $complaint = new complaint_tbl;
+        
+        $complaint->action = $request->action;
+        $complaint->save();
+
+        return redirect()->route('complaintdetails');
+
+
+
+    }
+
+    
+    public function show06()
+    {
+        $complaint_tbl= complaint_tbl::all();
+        return view('processnewcomplaint')->with('complaint_tbl', $complaint_tbl);
+        
+    }
+
+
 
 }

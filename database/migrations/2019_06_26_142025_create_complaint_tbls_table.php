@@ -18,7 +18,6 @@ class CreateComplaintTblsTable extends Migration
             $table->string('name');
             $table->integer('student_id');
             $table->string('categories');
-            $table->string('types');
             $table->date('complaint_date');
             $table->string('department');
             $table->string('campus');

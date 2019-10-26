@@ -1,0 +1,1 @@
+this is the messsage<?php /**PATH E:\xampp\htdocs\DIU_CMS\resources\views/mail.blade.php ENDPATH**/ ?>

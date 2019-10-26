@@ -54,10 +54,9 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'jarin@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Test email'),
+ 'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'jarin35-1641@diu.edu.bd'),
+        'name' => env('MAIL_FROM_NAME', 'hi'),
     ],
 
     /*
@@ -100,6 +99,27 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
+
+      /*
+    |--------------------------------------------------------------------------
+    | To remove stream_socket_enable_crypto() Error
+    |--------------------------------------------------------------------------
+    */
+    'stream' => [
+      'ssl' => [
+        'allow_self_signed' => true,
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+      ],
+    ],
+
+
+
+
+
+
+
+
 
     /*
     |--------------------------------------------------------------------------

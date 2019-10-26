@@ -4,7 +4,7 @@
 
 <div class="container" >
     <div class="row " >
-        <div class="col-md-10" >
+        <div class="col-md-2" >
             <div class="card" >
                 
                 <div class="card-body bg-primary text-white">
@@ -16,105 +16,29 @@
 
                    You are logged in as <strong>Admin</strong>!
                 </div>
-                <div class="card-header"><a href="{{route('newcomplaint')}}">New complain</a> </div>
-                <div class="card-header"><a href="{{route('newcomplaint')}}">Complaint details</a></div>
+            <div class="card-header"><a href="{{route('newcomplaint')}}">New Complaints</a> </div>
+            <div class="card-header"><a href="{{route('pnewcomplaint')}}">Pending Complaints</a></div>
+            <div class="card-header"><a href="{{route('cnewcomplaint')}}">Closed Complaints</a></div>
+            <div class="card-header"><a href="{{route('dnewcomplaint')}}">Complaints Details</a></div>
                 
             </div>
         </div>
+        <div class="col-md-8">
+            <h1 style="color:blue;text-align: center;">HOME</h1>
+             <p style="color:#2c4a7a">Daffodil International University (DIU) is recognized in independent government assessments as one of top graded universities in Bangladesh. The university has been founded by Daffodil Group with the approval of the Ministry of Education under the Private University Act of 1992 and its amendment in 1998 and Daffodil International University came into being on 24th January 2002, the University today combines impressive modern facilities and a dynamic approach to teaching and research with its proud heritage of service and achievement.
 
-
-
-       <!-- <div class="col-md-9" >
-            <div class="card">
-           <div class="panel">
-            <div class="panel-heading">
-                <center><strong>Complain Catagory</strong></center>
-                </div>
-            <div class="panel-body">
-                 <table>
-                    <tr>
-                    <td><a href="{{route('complaint')}}"><img src="img/transport.png" style=" height:150;weight:70px; "/></a><br>
-                    Academic </td>
-                    <td><a href="{{route('complaint')}}"><img src="img/library.png"  style=" height:150;weight:1500px; "/></a><br>
-                         Library
-                   </td>
-                    </tr>
-                    <br>
-                    <tr>
-                    <td><a href="{{route('complaint')}}"><img src="img/bus.jpg" style=" height:150;weight:100px; "/></a><br>
-                    Transport</td>
-                    <td><a href="{{route('complaint')}}"><img src="img/canteen.jpg" style=" height:150;weight:100px; "/></a>
-                    <br>
-                    Canteen</td>
-                    </tr>
-                    <tr>
-                    <td><a href="{{route('complaint')}}"><img src="img/account.jpg" style=" height:150;weight:100px; "/></a><br>
-                    Accounts</td>
-                    <td><a href="{{route('complaint')}}"><img src="img/hostel.jpg" style=" height:150;weight:100px; "/></a>
-                    <br>
-                    Hostel</td>
-                    </tr>
-
-
-                </table>
-
-                  </div><br><br>
-            <div class="panel-footer">
-                All Rights Reserved @ Daffodil International University
-            </div>
-               
-
-          
+To be among the very best in Bangladesh which is the most challenging goal, has been set for the university. This has done so because it is only through working we can achieve the very highest level of standards in curriculum, teaching, faculties and other activities that can realize the full potential of the academic community that is Daffodil International University. The vision reflects the service to the society. The mission is to pursue research, learning and teaching of international distinction for the benefit of the nation. </p>
         </div>
-  </div>
-    </div>-->
 
+
+
+       
+
+</div>
 </div>
 
 
 @endsection
-
-
-
-<!--
-
-    <div class="row">
-                <div class="col-md-3" >
-                    <div class="panel-body">
-                    <img src="img/transport.png" style=" height:150;weight:100px; " />
-                    </div>
-                </div>
-                 <div class="col-md-3" >
-                    <div class="panel-body">
-                    <img src="img/transport.png" style=" height:150;weight:100px; " />
-                    </div>
-                 </div>
-                 <div class="col-md-3" >
-                    <div class="panel-body">
-                    <img src="img/transport.png" style=" height:150;weight:100px; "/>
-                    </div>
-                 </div>
-                   </div>
-                
-                 <div class="row">
-                <div class="col-md-3" >
-                    <div class="panel-body">
-                    <img src="img/transport.png" style=" height:150;weight:100px; "  />
-                    </div>
-                 </div>
-                 <div class="col-md-3" >
-                    <div class="panel-body">
-                    <img src="img/transport.png" style=" height:150;weight:100px; " />
-                    </div>
-                 </div>
-                 <div class="col-md-3" >
-                    <div class="panel-body">
-                    <img src="img/transport.png" style=" height:150;weight:100px; " />
-                    </div>
-                 </div>
-                 </div>
-
-   
 
 
 

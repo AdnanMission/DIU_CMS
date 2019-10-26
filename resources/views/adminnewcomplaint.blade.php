@@ -1,9 +1,8 @@
-@extends('layouts.app')
-
+@extends('admin.layouts.master')
 @section('content')
 <div class="container-fluid bg-primary text-black  py-4 " >
 <center><strong><h3>View Complaint</h3>
-Your complaint details</strong></center>
+ View New complaint</strong></center>
 </div>
 
 <div class="container">
@@ -13,12 +12,13 @@ Your complaint details</strong></center>
 			<th>Name</th>
 			<th>Student_id</th>
 			<th>Categories</th>
-			<th>Types</th>
 			<th>Complaint-date</th>
 			<th>Department</th>
 			<th>Campus</th>
+			<th>complaint des</th>
 			<th>Uploded_file</th>
 			<th>Action</th>
+			<th>Status</th>
 			<th>  </th>
 			<th>  </th>
 
@@ -32,24 +32,25 @@ Your complaint details</strong></center>
 			<td>{{ $complaint_tbl->name }}</td>
 			<td>{{ $complaint_tbl->student_id }}</td>
 			<td>{{ $complaint_tbl->categories }}</td>
-			<td>{{ $complaint_tbl->types }}</td>
 			<td>{{ $complaint_tbl->complaint_date }}</td>
 			<td>{{ $complaint_tbl->department }}</td>
 			<td>{{ $complaint_tbl->campus }}</td>
-			<td>{{ $complaint_tbl->uplode_file }}</td>
-			<td> NotYet</td>
-
-			<!--<td>
-				<a href="{{ route('edit',$complaint_tbl->id)}}" class="btn btn-success">Edit</a>
-				<a href="{{ route('delete',$complaint_tbl->id)}}" class="btn btn-danger">Delete</a>
-                 </td>-->
+			<td>{{ $complaint_tbl->description_of_complaint }}</td>
+            <td>{{ $complaint_tbl->uplode_file }}</td>
+            <td>{{$complaint_tbl->action}}</td>
+			<td>
+				<!--<a href="{{ route('edit1',$complaint_tbl->id)}}" class="btn btn-success">Action</a>-->
+				<!--<a href="{{ route('delete',$complaint_tbl->id)}}" class="btn btn-danger">Delete</a>-->
+				</td>
                  <td>
-		<form class=" form-inline" action="{{route('action',$complaint_tbl->id)}}" method="POST">
+                 
+		<form class=" form-inline" action="{{route('delete',$complaint_tbl->id)}}" method="POST">
 					 @csrf
-					<input type="submit" class="btn btn-primary" value="Action">
+					<input type="submit" class="btn btn-danger" value="Delete">
 				</form>
 				
 			</td>
+			
 			<!--<td>
 				<a href="{{ route('send',$complaint_tbl->id)}}" class="btn btn-success">Submit</a>
 			</td>-->
@@ -58,9 +59,6 @@ Your complaint details</strong></center>
 	@endforeach
 
 	</table>
-	
-
-</div>
 
 
 @endsection

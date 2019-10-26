@@ -13,7 +13,6 @@ Admin-Action</strong></center>
             <th>Name:</th>
             <th>Student_id</th>
             <th>Categories</th>
-            <th>Types</th>
             <th>Complaint-date</th>
             <th>Department</th>
             <th>Campus</th>
@@ -31,17 +30,14 @@ Admin-Action</strong></center>
             <td>{{ $complaint_tbl->name }}</td>
             <td>{{ $complaint_tbl->student_id }}</td>
             <td>{{ $complaint_tbl->categories }}</td>
-            <td>{{ $complaint_tbl->types }}</td>
             <td>{{ $complaint_tbl->complaint_date }}</td>
             <td>{{ $complaint_tbl->department }}</td>
             <td>{{ $complaint_tbl->campus }}</td>
             <td>{{ $complaint_tbl->uplode_file }}</td>
-            <td>In-processing</td>
+            <td>{{ $complaint_tbl->action }}</td>
+
             
-            
-    
-                        
-                             <td>
+     <td>
         <form class=" form-inline" action="{{route('delete',$complaint_tbl->id)}}" method="POST">
                      @csrf
                     <input type="submit" class="btn btn-danger" value="Delete">

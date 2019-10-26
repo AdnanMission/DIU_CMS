@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid bg-primary text-black  py-4 " >
+<div class="container-fluid bg-primary text-black  py-4 " style="margin: auto;">
 <center><strong><h3> Complaint and Grivance Section</h3>
 Daffodil International University</strong></center>
 </div>
@@ -49,36 +49,18 @@ Daffodil International University</strong></center>
 
                             <div class="col-md-6">
                                 <select id="categories" type="text" class="form-control @error('categories') is-invalid @enderror" name="categories" value="{{ $complaint_tbl->categories }}" required autocomplete="categories" autofocus>
-                                	<option>-----Categories----</option>
-                                	<option>Academic</option>
+                                    <option>Academic</option>
+                                	<!--<option>-----Categories----</option>
+                                	
                                 	<option>Library</option>
                                 	<option>Transport</option>
                                 	<option>Canteen</option>
                                 	<option>Accounts</option>
-                                	<option>Hostel</option>
+                                	<option>Hostel</option>-->
 
                                 </select> 
 
                                 @error('categories')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                       <div class="form-group row">
-                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Types') }}</label>
-
-                            <div class="col-md-6">
-                                <select id="types" type="text" class="form-control @error('types') is-invalid @enderror" name="types" value="{{$complaint_tbl->types  }}" required autocomplete="types" autofocus>
-                                	<option>-----Types----</option>
-                                	<option>Complaint</option>
-                                	<option>Grivance</option>
-                                </select> 
-
-                                @error('types')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

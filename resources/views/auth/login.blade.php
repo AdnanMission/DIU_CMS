@@ -4,8 +4,11 @@
 <div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card" >
+                <div class="card-header">
+                    <img src="img/diulogo.png" class="card-img-top" alt="..." style="height:auto;width: 250px;">
+
+               <h5 style="text-align: center; color:#0a8af2;">{{ __('Student Portal Login') }}</h5> </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

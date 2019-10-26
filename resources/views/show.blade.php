@@ -1,26 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid bg-primary text-black  py-4 " >
-<center><strong><h3>View Complaint</h3>
-Your complaint details</strong></center>
-</div>
 
 <div class="container">
-	<table class="table table-responsive table-hover">
+	<table class="table">
 		<tr>
 			<th>Complaint_no</th>
 			<th>Name</th>
 			<th>Student_id</th>
 			<th>Categories</th>
-			<th>Types</th>
 			<th>Complaint-date</th>
 			<th>Department</th>
 			<th>Campus</th>
+			<th>complaint des</th>
 			<th>Uploded_file</th>
+			<th>Status</th>
 			<th>Action</th>
-			<th>  </th>
-			<th>  </th>
 
 			
 		</tr>
@@ -28,29 +23,39 @@ Your complaint details</strong></center>
 		@foreach($complaint_tbl as $complaint_tbl)
 		@php $i++ @endphp
 		<tr>
+			@if( $complaint_tbl->name == Auth::user()->name)
 			<td>{{ $i }}</td>
 			<td>{{ $complaint_tbl->name }}</td>
 			<td>{{ $complaint_tbl->student_id }}</td>
 			<td>{{ $complaint_tbl->categories }}</td>
-			<td>{{ $complaint_tbl->types }}</td>
 			<td>{{ $complaint_tbl->complaint_date }}</td>
 			<td>{{ $complaint_tbl->department }}</td>
 			<td>{{ $complaint_tbl->campus }}</td>
-			<td>{{ $complaint_tbl->uplode_file }}</td>
+			<td>{{ $complaint_tbl->description_of_complaint }}</td>
+            <td>{{ $complaint_tbl->uplode_file }}</td>
+            <td>{{ $complaint_tbl->action }}</td>
+            <!--<td>
+				<a href="{{ route('edit',$complaint_tbl->id)}}" class="btn btn-success">Submit</a>-->
+				<!--</td>
 			<td>
 				<a href="{{ route('edit',$complaint_tbl->id)}}" class="btn btn-success">Edit</a>
-				<!--<a href="{{ route('delete',$complaint_tbl->id)}}" class="btn btn-danger">Delete</a>-->
-                 </td>
+				<a href="{{ route('delete',$complaint_tbl->id)}}" class="btn btn-danger">Delete</a>-->
+				<!--</td>-->
                  <td>
-		<form class=" form-inline" action="{{route('delete',$complaint_tbl->id)}}" method="POST">
+             
+		    
+				<form class=" form-inline" action="{{route('email',$complaint_tbl->id)}}" method="get">
 					 @csrf
-					<input type="submit" class="btn btn-danger" value="Delete">
+					<input type="submit" class="btn btn-success" value="Send">
+				 
 				</form>
-				
 			</td>
+			
 			<!--<td>
 				<a href="{{ route('send',$complaint_tbl->id)}}" class="btn btn-success">Submit</a>
 			</td>-->
+
+			@endif
 		</tr>
 
 	@endforeach
@@ -59,6 +64,7 @@ Your complaint details</strong></center>
 	
 
 </div>
+<div style="text-align: center; "><button style="width:150px; height:50px; color:red; "><strong><a href="{{route('login')}}">Back</a></button></strong> </div>
 
 
 @endsection

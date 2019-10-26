@@ -8,6 +8,9 @@
 		h2 a {
          color:black;
 		}
+		#main-header,#main-footer{
+			background: linear-gradient(45deg,#00897B,#0081bf);
+		}
 
 	</style>
 </head>

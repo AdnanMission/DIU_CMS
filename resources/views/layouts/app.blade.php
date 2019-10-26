@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Complaint Management System</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,15 +18,29 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.popper.min.js"></script>
+    <style type="text/css">
+        .header-content{
+    background: linear-gradient(45deg,#00897B,#0081bf);
+    }
+    </style>
 </head>
-<body >
-    <div id="app" style="background-color:white">
+<body  style="background: linear-gradient(to right, #ada996, #c8dad9, #b4d2f2, #B2DFDB">
+    
+    <div id="app" style="">
+        <div class="header-content">
         <!--style="background-image:url(/img/transport.png);width:1400px; height:560px;"-->
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container" >
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a  style="color: white;" class="navbar-brand" href="{{ url('/') }}">
+                  HOME
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -42,11 +56,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a style="color: white;"  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a  style="color: white;" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -72,6 +86,9 @@
                 </div>
             </div>
         </nav>
+    </div>
+</div>
+
 
         <main class="py-4">
             @yield('content')
@@ -79,3 +96,5 @@
     </div>
 </body>
 </html>
+
+
